@@ -1,4 +1,10 @@
 import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+
 public class PerformanceTests {
     @Test
     public void performanceTest() throws IOException {
