@@ -10,6 +10,7 @@ public class NumberProcessor {
     public static void main(String[] args) {
         try {
             List<Integer> numbers = readNumbersFromFile("number.txt");
+            assert numbers != null;
             System.out.println("Минимальное: " + _min(numbers));
             System.out.println("Максимальное: " + _max(numbers));
             System.out.println("Сумма: " + _sum(numbers));
