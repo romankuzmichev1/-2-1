@@ -22,7 +22,6 @@ public class PerformanceTests {
     @Test
     public void performanceTestNumbersTxt() throws IOException {
         List<Integer> numbers = NumberProcessor.readNumbersFromFile("numbers.txt");
-
         assertNotNull(numbers);
         assertEquals(1, NumberProcessor._min(numbers));
         assertEquals(100, NumberProcessor._max(numbers));
