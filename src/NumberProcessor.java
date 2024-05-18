@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -68,7 +69,9 @@ public class NumberProcessor {
         return numbers.stream().mapToInt(Integer::intValue).sum();
     }
 
-    public static int _mult(List<Integer> numbers) {
-        return numbers.stream().reduce(1, (a, b) -> a * b);
+    public static BigInteger _mult(List<Integer> numbers) {
+        return numbers.stream()
+                .map(BigInteger::valueOf)
+                .reduce(BigInteger.ONE, BigInteger::multiply);
     }
 }

@@ -1,6 +1,7 @@
 import org.junit.Test;
 import java.io.IOException;
 import java.util.List;
+import java.math.BigInteger;
 import static org.junit.Assert.*;
 
 public class PerformanceTests {
@@ -15,7 +16,7 @@ public class PerformanceTests {
         assertEquals(1, NumberProcessor._min(numbers));
         assertEquals(5, NumberProcessor._max(numbers));
         assertEquals(15, NumberProcessor._sum(numbers));
-        assertEquals(120, NumberProcessor._mult(numbers));
+        assertEquals(BigInteger.valueOf(120), NumberProcessor._mult(numbers));
     }
 
     @Test
@@ -27,6 +28,6 @@ public class PerformanceTests {
         assertEquals(100, NumberProcessor._max(numbers));
         assertEquals(5050, NumberProcessor._sum(numbers));
         // Проверка на положительное произведение, так как реальное значение очень велико.
-        assertTrue(NumberProcessor._mult(numbers) > 0);
+        assertTrue(NumberProcessor._mult(numbers).compareTo(BigInteger.ZERO) > 0);
     }
 }
