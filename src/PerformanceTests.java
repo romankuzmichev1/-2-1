@@ -1,8 +1,6 @@
 import org.junit.Test;
-
 import java.io.IOException;
 import java.util.List;
-
 import static org.junit.Assert.*;
 
 public class PerformanceTests {
@@ -11,7 +9,7 @@ public class PerformanceTests {
 
     @Test
     public void performanceTestNumberTxt() throws IOException {
-        List<Integer> numbers = NumberProcessor.readNumbersFromFile("src/test/resources/number.txt");
+        List<Integer> numbers = NumberProcessor.readNumbersFromFile("number.txt");
 
         assertNotNull(numbers);
         assertEquals(1, NumberProcessor._min(numbers));
@@ -22,7 +20,7 @@ public class PerformanceTests {
 
     @Test
     public void performanceTestNumbersTxt() throws IOException {
-        List<Integer> numbers = NumberProcessor.readNumbersFromFile("src/test/resources/numbers.txt");
+        List<Integer> numbers = NumberProcessor.readNumbersFromFile("numbers.txt");
 
         assertNotNull(numbers);
         assertEquals(1, NumberProcessor._min(numbers));
