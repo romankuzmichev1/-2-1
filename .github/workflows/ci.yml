@@ -35,7 +35,11 @@ jobs:
           echo "1 2 3 4 5" > number.txt
 
       - name: Compile
-        run: javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar -d bin src/NumberProcessor.java src/PerformanceTests.java
+        run: javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar -d bin src/*.java
 
       - name: Run tests
         run: java -cp .:bin:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore PerformanceTests
+
+      - name: Send success message
+        if: success()
+        run: java -cp .:bin src.TelegramBotSender "Всё Окей"
